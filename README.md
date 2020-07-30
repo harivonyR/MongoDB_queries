@@ -1,7 +1,7 @@
 # MongoDB_queries
 MongoDB queries to remember
 
-##**Basic Command**
+## **Basic Command**
 *************
 use amazon 			//create a data base
 show dbs 			//show selected database
@@ -20,14 +20,14 @@ db.products.drop()
 	//delete products
 
 
-##**CREATING QUERIES**
+## **CREATING QUERIES**
 ****************
 db.products.insertOne({"name" : "macbook pro", "price" : 1500, "category" : "Computers"})
 db.products.insertMany([{"name" : "iPhone 11", "price" : 900, "category" : "Electronics"}, 
 							{"name" : "Headphone", "price" : 100, "category" : "Electronics"}])
 	//.insertMany() argument must be an array							
 							
-##**FINDING QUERIES**
+## **FINDING QUERIES**
 ***************
 db.products.find() 							
 	//return all document in "products collection"
@@ -60,14 +60,14 @@ db.products.find({$and:[{price : {$lt: 200} },{category: "Electronics"}]})
 db.products.find({$or:[{price : {$gt: 500} },{category: "Electronics"}]})
 
 
-##**UPDATE QUERIES**
+## **UPDATE QUERIES**
 **************
 db.products.updateOne({name: "macbook pro"},{$set: {price: 1600} })
 db.products.updateOne({name: "macbook pro"},{$set: {company: "Apple"} })
 db.products.updateMany({category: "Electronics"},{$set: {category: "Electronic"} })
 
 
-##**DELETEING QUERIES**
+## **DELETEING QUERIES**
 *****************
 db.products.remove({name: "iPhone 11"})
 db.products.deleteMany({price : {$lt: 250} })
